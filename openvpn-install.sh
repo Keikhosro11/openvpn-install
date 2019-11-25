@@ -196,6 +196,7 @@ private-address: ::ffff:0:0/96' > /etc/unbound/openvpn.conf
 function installQuestions () {
 	echo "Welcome to the OpenVPN installer!"
 	echo "The git repository is available at: https://github.com/angristan/openvpn-install"
+	echo "And Also this is edited version for installing policycoreutils-python in CentOS :)"
 	echo ""
 
 	echo "I need to ask you a few questions before starting the setup."
@@ -623,6 +624,7 @@ function installOpenVPN () {
 		apt-get install -y openvpn iptables openssl wget ca-certificates curl
 	elif [[ "$OS" = 'centos' ]]; then
 		yum install -y epel-release
+		yum install -y policycoreutils-python
 		yum install -y openvpn iptables openssl wget ca-certificates curl tar
 	elif [[ "$OS" = 'amzn' ]]; then
 		amazon-linux-extras install -y epel
